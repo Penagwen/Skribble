@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Skribble</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+	<div class="join-screen">
+		<input type="text" placeholder="Enter your name" maxlength="10">
+		<div class="character-screen">
+			<img class="body" src="./img/color_atlas.gif">
+			<img class="eyes" src="./img/eyes_atlas.gif">
+			<img class="mouth" src="./img/mouth_atlas.gif">
+
+			<button><img class="switchBodyRight" src="./img/arrow.gif"></button>
+			<button><img class="switchEyesRight" src="./img/arrow.gif"></button>
+			<button><img class="switchMouthRight" src="./img/arrow.gif"></button>
+
+		</div>
+		<button class="startBtn">Play!</button>
+	</div>
+	
+	<div class="game" style="display: none;">
+			<div class="header">
+				<div class="clock">0</div>
+
+				<div class="description"></div>
+				<div class="word"></div>
+				<!-- <button class="hideWord" onclick="hideWord()"></button> -->
+			</div>
+			<div class="players"></div>
+			<div class="drawing">
+				<canvas></canvas>
+				<div class="game-settings" style="visibility:hidden">
+					<span>Settings</span>
+
+					<button class="startBtn">Start!</button>
+				</div>
+				<div class="word-choices" style="visibility:hidden">
+					<span>Pick a word!</span>
+					<div class="buttons">
+						<button class="wordBtn1 button-28" role="button"></button>
+						<button class="wordBtn2 button-28" role="button"></button>
+						<button class="wordBtn3 button-28" role="button"></button>
+					</div>
+				</div>
+				<div class="results" style="visibility:hidden">
+					<span>results</span>
+	
+					<div class="winner"></div>
+					<div class="second"></div>
+					<div class="third"></div>
+
+					
+					<button class="restart" style="visibility:hidden">Play Again!</button>
+				</div>
+				
+				<div class="tools">
+					<div class="currentColor"></div>
+					<div class="colors">
+						<button style="background-color: var(--white);"></button>
+						<button style="background-color: var(--lightgrey);"></button>
+						<button style="background-color: var(--red);"></button>
+						<button style="background-color: var(--orange);"></button>
+						<button style="background-color: var(--yellow);"></button>
+						<button style="background-color: var(--green);"></button>
+						<button style="background-color: var(--lightblue);"></button>
+						<button style="background-color: var(--blue);"></button>
+						<button style="background-color: var(--purple);"></button>
+						<button style="background-color: var(--pink);"></button>
+						<button style="background-color: var(--brown);"></button>
+						<button style="background-color: var(--black);"></button>
+						<button style="background-color: var(--grey);"></button>
+						<button style="background-color: var(--darkred);"></button>
+						<button style="background-color: var(--darkorange);"></button>
+						<button style="background-color: var(--darkyellow);"></button>
+						<button style="background-color: var(--darkgreen);"></button>
+						<button style="background-color: var(--cyan);"></button>
+						<button style="background-color: var(--darkblue);"></button>
+						<button style="background-color: var(--darkpurple);"></button>
+						<button style="background-color: var(--darkpink);"></button>
+						<button style="background-color: var(--darkbrown);"></button>
+
+					</div>
+					<div class="drawingOptions">
+						<button class="pencil selected"><div class="icon"></div></button>
+						<button class="eraser"><div class="icon"></div></button>
+						<button class="bucket"><div class="icon"></div></button>
+					</div>
+
+					<div class="sizes">
+						<button class="small"><div style="background-size: 40%;" class="icon"></div></button>
+						<button class="medium selected"><div style="background-size: 60%;" class="icon"></div></button>
+						<button class="large"><div style="background-size: 120%;" class="icon"></div></button>
+						<button class="extraLarge"><div style="background-size: 150%;" class="icon"></div></button>
+					</div>
+				</div>
+			</div>
+			<div class="chat">
+				<div class="messages"></div>
+				<input type="text" placeholder="Type your guess here">
+			</div>
+
+	</div>
+	
+	<script type="text/javascript" src="socket.io/socket.io.js"></script>
+	
+	<script src="./code.js"></script>
+</body>
+</html>
